@@ -1,4 +1,6 @@
-class dbSimulator {
+
+
+class Storage {
   
    state = [];
 
@@ -17,4 +19,4 @@ class dbSimulator {
 
 };
 
-module.exports = dbSimulator;
+module.exports = Storage;

@@ -1,9 +1,13 @@
 class Car {
 
-  constructor(brand, model, year) {
-    this.brand = brand;
-    this.model = model;
-    this.year = year;
-  }
+  brand;
+  model;
+  year;
 
-}
+  constructor() {
+   
+  };
+
+};
+
+module.exports = Car;

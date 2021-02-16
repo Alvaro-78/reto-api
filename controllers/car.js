@@ -5,6 +5,6 @@ class Car {
 
   constructor() {
     
-  }
+  };
 
-}
+};

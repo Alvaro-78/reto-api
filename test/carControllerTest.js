@@ -6,3 +6,9 @@ const carController = require('../controllers/car');
 
 //Como indexAll es async para resolver la promesa hacemos el then()
 carController.indexAll().then(console.log);
+
+let storage = new Storage();
+
+let result2 = storage.finById( 1 );
+
+console.log( result2 );

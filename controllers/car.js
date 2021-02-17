@@ -15,15 +15,15 @@ class Car {
     return this.storage.get();
   };
   
-  async store() {
+  async store(car) {
+   return numberOfCarsPromis = this.storage.set(car)
+  };
+
+  async update() {
     return
   };
 
   async destroy () {
-    return
-  };
-
-  async update() {
     return
   };
 

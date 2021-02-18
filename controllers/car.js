@@ -16,12 +16,13 @@ class Car {
   };
   
   async store(car) {
-   return numberOfCarsPromis = this.storage.set(car)
+   return this.storage.set(car)
   };
 
-  async update() {
-    return
+  async update(car, id) {
+    return this.storage.updateById(car, id)
   };
+    
 
   async destroy () {
     return

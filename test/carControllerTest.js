@@ -1,45 +1,13 @@
-const Storage = require('../js/storage')
+const carController = require('../controllers/car')
 
-//Como indexAll es async para resolver la promesa hacemos el then()
-
-( async () => {
-
+(async() => {
   try {
-
-    let storage = new Storage();
-  
-    await storage.set({name: 'pepe', age: '23'})
-  
-    let resultado1 = await storage.set({name: 'pepe', age:'33'});
-  
-    let resultado2 = await storage.findById( 1 );
-  
-    console.log( resultado1, resultado2);
-  } 
-  catch ( error ) {
-    console.log( "Manejo de la excepción" )
+      await carController.store({name:'prueba', year: 2011});
+      let resultado1 = await carController.update(1,{name:'prueba',year:2010});
+      console.log(resultado1);
+      // PROBANDO EL CASO DE ERROR
+      await carController.update(19,{name:'prueba',year:2010});
+  } catch (error) {
+      console.log('ERROR MANEJADO', error.message);
   }
-
-
-} ) ();
-
-
-
-
-
-
-
-
-
-
-let storage = new Storage();
-
-let resultado1 = storage.set({name: 'pepe', age:'33'});
-let resultado2 = storage.findById( 1 );
-
-
-let resultado3 = storage.updateById(1, {name:'pepe', age: '33'});
-let resultado4 = storage.findById(1);
-
-let resultado5 = storage.updateById(2, {name:'pepe', age:'33'});
-console.log(resultado1, resultado3, resultado4, resultado5);
+})();
